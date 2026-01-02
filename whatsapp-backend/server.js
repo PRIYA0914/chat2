@@ -29,14 +29,20 @@ io.on("connection", (socket) => {
     socket.to(chatId).emit("typing");
   });
 
-  // Handle delivery ack
-  socket.on("messageDelivered", ({ messageId, chatId }) => {
-    socket.to(chatId).emit("messageDelivered", { messageId });
+  // Handle delivery ack (per-user)
+  socket.on("messageDelivered", ({ messageId, chatId, userId }) => {
+    socket.to(chatId).emit("messageDelivered", {
+      messageId,
+      userId,
+    });
   });
 
-  // Handle seen ack
-  socket.on("messageSeen", ({ messageId, chatId }) => {
-    socket.to(chatId).emit("messageSeen", { messageId });
+  // Handle seen ack (per-user)
+  socket.on("messageSeen", ({ messageId, chatId, userId }) => {
+    socket.to(chatId).emit("messageSeen", {
+      messageId,
+      userId,
+    });
   });
 
   socket.on("disconnect", () => {
