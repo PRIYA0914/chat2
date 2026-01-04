@@ -17,8 +17,18 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("User connected:", socket.id);
 
+
   socket.on("join", (chatId) => {
     socket.join(chatId);
+  });
+
+  // Group chat support
+  socket.on("joinGroup", (groupId) => {
+    socket.join(groupId);
+  });
+
+  socket.on("sendGroupMessage", (message) => {
+    io.to(message.chatId).emit("receiveGroupMessage", message);
   });
 
   socket.on("sendMessage", (data) => {

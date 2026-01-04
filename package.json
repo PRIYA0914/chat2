@@ -19,7 +19,10 @@
   "homepage": "https://github.com/PRIYA0914/chat2#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "expo-linear-gradient": "^15.0.8",
     "express": "^5.2.1",
+    "react-dom": "19.1.0",
+    "react-native-web": "^0.21.0",
     "socket.io": "^4.8.3"
   }
 }
