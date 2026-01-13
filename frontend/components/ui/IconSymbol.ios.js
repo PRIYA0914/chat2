@@ -1,0 +1,1 @@
+// IconSymbol iOS UI component

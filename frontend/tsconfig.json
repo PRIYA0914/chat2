@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  }
+}

@@ -1,0 +1,1 @@
+// HapticTab component
